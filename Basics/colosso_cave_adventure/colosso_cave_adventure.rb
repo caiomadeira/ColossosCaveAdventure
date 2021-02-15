@@ -17,6 +17,12 @@ $$$$$$/   $$$$$$/  $$/  $$$$$$/  $$$$$$$/ $$$$$$$/   $$$$$$/         $$$$$$/   $
 
 
 \n"
+
+####################################################################
+#
+#                          INTRODUÇÃO
+#
+####################################################################
 puts "=================================================================================================================================================================================================================================\n"
 sleep 5
 puts "Em uma caverna, em algum lugar..."
@@ -29,7 +35,10 @@ puts "\n\n\n"
 sleep 5
 
 puts "\n[:D] Bem-Vindo á caverna do Colosso!\n"
-sleep 2
+sleep 3
+narrator_1 = File.open("ascii_art/narrator/happy_1_face.txt")
+puts narrator_1.read
+sleep 3
 puts "\[:D] Eu sou Darwin. Seu guia!"
 sleep 2
 puts "\n[:D] Dê um passo a frente e vamos as perguntas!!\n"
@@ -38,8 +47,13 @@ puts "\n  [1] - Dar um passo a frente.\n"
 sleep 1
 puts "\n  [2] - 'Onde estou? Preciso de respostas.'\n"
 
-question_1 = gets.to_i
+####################################################################
+#
+#                          PRIMEIRA QUESTÃO
+#
+####################################################################
 
+question_1 = gets.to_i
 
 if question_1 == 1
     puts "\n[:o] Mas que pequena criatura corajosa! Nem mesmo perguntou nada! A fome por uma aventura é GRANDE!\n"
@@ -57,7 +71,7 @@ if question_1 == 1
     sleep 2
     puts "\n[:)]\n"
     sleep 3
-    puts "\n[^O^] HAHAHAHAHAHAHAHA,\n"
+    puts "\n[^O^] HAHAHAHAHAHAHAHA!!!\n"
     sleep 2
     puts "\n[:D] Vamos?\n"
     sleep 4
@@ -127,11 +141,16 @@ elsif age <= 10
 
     puts "\n[:T] Crianças não deveriam ter que se aventurar sozinhas, mas se tem certeza, leve esse [ESTILINGUE NIVEL 1]\n"
 
+else 
+
+    puts "\n[:D] Pegue isso! \n"
+
 end
 
 
 puts "[:D] Qual item para HP você quer?\n"
 puts "[:D] Você pode escolher UM item apenas.\n\n"
+sleep 4
 
 puts "[1] Maça --> +5 HP\n"
 puts "[2] Barra de chocolate --> +1.5 HP\n"
@@ -139,9 +158,8 @@ puts "[3] Suco de caixinha --> +3 HP\n"
 puts "[4] Torta de Banana --> +5 HP\n"
 puts "[5] Chiclete --> +0.5 HP\n"
 puts "[6] Café --> +4 HP\n"
-
 item = gets.to_i
-
+sleep 4
 
 if item == 1
     item = "[:)] MAÇA --- [5 HP]"
@@ -167,4 +185,38 @@ elsif item == 6
     item = "[:)] CAFÉ --- [4 HP]"
     puts item + " adicionado ao seu inventário!\n"
 
+else 
+    puts "\n[:S] Não escolheu nada?...\n"
+    sleep 3
+    puts "\n[:)] Toma ai.\n"
+    sleep 1
+    puts "\n[:)] BANANA --- [3 HP]  ADICIONADO NO INVENTÁRIO.\n"
+    sleep 3
 end 
+sleep 5
+puts "=================================================================================================================================================================================================================================\n"
+sleep 5
+puts "\n\n\t\tVenha, pequeno humano...\n\n"
+sleep 5
+
+for f1, f2 in 1..5
+    f1 = File.open("ascii_art/items/foot_1.txt")
+    puts f1.read
+    sleep 3
+    f2 = File.open("ascii_art/items/foot_2.txt")
+    puts f2.read
+    sleep 3
+end
+sleep 4
+puts "\n"
+puts "\n"
+puts "\n"
+sleep 4
+puts "\n[:o] Ei, algo está vindo ai!\n"
+sleep 4
+puts ".\n"
+puts ".\n"
+puts ".\n"
+
+
+
