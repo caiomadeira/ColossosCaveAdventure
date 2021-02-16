@@ -1,3 +1,6 @@
+require './enemy.rb'
+require './inventory.rb'
+require './combat.rb'
 
 
 puts " 
@@ -158,32 +161,32 @@ puts "[3] Suco de caixinha --> +3 HP\n"
 puts "[4] Torta de Banana --> +5 HP\n"
 puts "[5] Chiclete --> +0.5 HP\n"
 puts "[6] Café --> +4 HP\n"
-item = gets.to_i
+get_item = gets.to_i
 sleep 4
 
-if item == 1
-    item = "[:)] MAÇA --- [5 HP]"
-    puts item + " adicionado ao seu inventário!\n"
+if get_item == 1
+    get_item = "[:)] MAÇA --- [5 HP]"
+    puts get_item + " adicionado ao seu inventário!\n"
 
-elsif item == 2
-    item = "[:)] BARRA DE CHOCOLATE --- [1.5 HP]"
-    puts item + " adicionado ao seu inventário!\n"
+elsif get_item == 2
+    get_item = "[:)] BARRA DE CHOCOLATE --- [1.5 HP]"
+    puts get_item + " adicionado ao seu inventário!\n"
 
-elsif item == 3
-    item = "[:)] SUCO DE CAIXINHA --- [4 HP]"
-    puts item + " adicionado ao seu inventário!\n"
+elsif get_item == 3
+    get_item = "[:)] SUCO DE CAIXINHA --- [4 HP]"
+    puts get_item + " adicionado ao seu inventário!\n"
 
-elsif item == 4
-    item = "[:)] TORTA DE BANANA --- [5 HP]"
-    puts item + " adicionado ao seu inventário!\n"
+elsif get_item == 4
+    get_item = "[:)] TORTA DE BANANA --- [5 HP]"
+    puts get_item + " adicionado ao seu inventário!\n"
 
-elsif item == 5
-    item = "[:)] CHICLETE --- [0.5 HP]"
-    puts item + " adicionado ao seu inventário!\n"
+elsif get_item == 5
+    get_item = "[:)] CHICLETE --- [0.5 HP]"
+    puts get_item + " adicionado ao seu inventário!\n"
 
-elsif item == 6
-    item = "[:)] CAFÉ --- [4 HP]"
-    puts item + " adicionado ao seu inventário!\n"
+elsif get_item == 6
+    get_item = "[:)] CAFÉ --- [4 HP]"
+    puts get_item + " adicionado ao seu inventário!\n"
 
 else 
     puts "\n[:S] Não escolheu nada?...\n"
@@ -192,6 +195,7 @@ else
     sleep 1
     puts "\n[:)] BANANA --- [3 HP]  ADICIONADO NO INVENTÁRIO.\n"
     sleep 3
+    return get_item
 end 
 sleep 5
 puts "=================================================================================================================================================================================================================================\n"
@@ -199,7 +203,9 @@ sleep 5
 puts "\n\n\t\tVenha, pequeno humano...\n\n"
 sleep 5
 
-for f1, f2 in 1..5
+steps = 5 # Evitando Magic Number
+
+for f1, f2 in 1..steps
     f1 = File.open("ascii_art/items/foot_1.txt")
     puts f1.read
     sleep 3
@@ -217,6 +223,37 @@ sleep 4
 puts ".\n"
 puts ".\n"
 puts ".\n"
+sleep 3
 
+puts "\n\n\t\t[:o] UM INIMIGO APARECEU!!\n\n"
+
+
+XP = 0.to_s
+HP = 0.to_s
+
+
+NAM = "Skeleton"
+LEV = 1.to_s
+DAM = 20.to_s
+HP = 30.to_s
+DROP = '--'
+enemy(name=NAM, level=LEV, img_ascii="ascii_art/characters/skeleton_weak.txt", hp=HP, damage=DAM, drop=DROP)
+
+puts'\n'
+puts'\n'
+sleep 2
+
+
+combat_1
+
+question_inventory = gets.to_i
+if question_inventory == 3
+
+    sleep 2
+    puts "\n[+] Abrindo inventário.\n"
+    inventory(item1=get_item, item2='', item3='', item4='', item5='', item6='', xp=XP, hp=HP)
+end
+puts'\n'
+puts'\n'
 
 

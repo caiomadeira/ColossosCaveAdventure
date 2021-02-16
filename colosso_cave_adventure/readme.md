@@ -34,4 +34,6 @@ puts -> assim como print(em Python) e printf(em C/C++) imprime uma imagem na tel
 \n -> Pula uma linha
 \t -> Espaço na mesma linha
 gets fornece um input
-to_i -> transforma str em int
+to_i -> transforma em int
+to_s -> '''' em str
+$ -> define como global uma variavel
