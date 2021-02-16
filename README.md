@@ -1,10 +1,9 @@
 ###### Colosso's Cave Adventure
 
 
-![CCA Logo](logo.png)
 
 ![Colosso's Cave Adventure](logo.png)
 
-Format: ![Colosso's Cave Adventure](logo.png)
+Format: ![Colosso's Cave Adventure](https://github.com/CaioMadeira/ColossosCaveAdventure/blob/master/logo.JPG)
 
 _Apenas um jogo de escolhas feito em Ruby para exercitar Ruby_
